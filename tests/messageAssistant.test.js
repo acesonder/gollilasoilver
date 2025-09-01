@@ -12,9 +12,10 @@ describe('Message Assistant', () => {
 
     test('AI Response Generator initializes', async () => {
         expect(aiGenerator).toBeDefined();
-        expect(aiGenerator.initialized).toBe(false);
         
-        await aiGenerator.init();
+        // The AI generator auto-initializes in the constructor
+        // Wait a bit for initialization to complete
+        await new Promise(resolve => setTimeout(resolve, 100));
         expect(aiGenerator.initialized).toBe(true);
     });
 
