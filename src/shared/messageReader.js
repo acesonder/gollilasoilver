@@ -155,7 +155,7 @@ class MessageReader {
 
     async executeAppleScript(script) {
         try {
-            const { stdout, stderr } = await execAsync(`osascript -e '${script.replace(/'/g, "'\\''")})'`);
+            const { stdout, stderr } = await execAsync(`osascript -e '${script.replace(/'/g, "'\\''")}}'`);
             if (stderr) {
                 console.warn('AppleScript warning:', stderr);
             }

@@ -151,13 +151,24 @@ class AIResponseGenerator {
     extractEntities(text) {
         const doc = compromise(text);
         
-        return {
-            times: doc.times().out('array'),
-            places: doc.places().out('array'),
-            people: doc.people().out('array'),
-            dates: doc.dates().out('array'),
-            money: doc.money().out('array')
-        };
+        try {
+            return {
+                times: doc.times ? doc.times().out('array') : [],
+                places: doc.places ? doc.places().out('array') : [],
+                people: doc.people ? doc.people().out('array') : [],
+                dates: doc.dates ? doc.dates().out('array') : [],
+                money: doc.money ? doc.money().out('array') : []
+            };
+        } catch (error) {
+            console.warn('Error extracting entities:', error.message);
+            return {
+                times: [],
+                places: [],
+                people: [],
+                dates: [],
+                money: []
+            };
+        }
     }
 
     categorizeMessage(text, sentiment) {
