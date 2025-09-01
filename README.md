@@ -1,181 +1,170 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
-body, html {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: black;
-}
-.content{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.content .text{
-  position: relative;
-  color: #fff;
-  font-weight: 700;
-  font-size: 45px;
-  transform: scale(2);
-  padding: 30px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.content .text:before,
-.content .text:after {
-  padding: 30px;
-  color: white;
-  content: attr(data-text);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: black;
-  overflow: hidden;
-  top: 0;
-}
-.content .text:before{
-  left: 3px;
-  text-shadow: -2px 0 red;
-  animation: glitch-1 2s linear infinite reverse;
-}
-.content .text:after{
-  left: -3px;
-  text-shadow: -2px 0 blue;
-  animation: glitch-2 2s linear infinite reverse;
-}
-@keyframes glitch-1 {
-  0% {
-    clip: rect(132px, auto, 101px, 30px);
-  }
-  5% {
-    clip: rect(17px, auto, 94px, 30px);
-  }
-  10% {
-    clip: rect(40px, auto, 66px, 30px);
-  }
-  15% {
-    clip: rect(87px, auto, 82px, 30px);
-  }
-  20% {
-    clip: rect(137px, auto, 61px, 30px);
-  }
-  25% {
-    clip: rect(34px, auto, 14px, 30px);
-  }
-  30% {
-    clip: rect(133px, auto, 74px, 30px);
-  }
-  35% {
-    clip: rect(76px, auto, 107px, 30px);
-  }
-  40% {
-    clip: rect(59px, auto, 130px, 30px);
-  }
-  45% {
-    clip: rect(29px, auto, 84px, 30px);
-  }
-  50% {
-    clip: rect(22px, auto, 67px, 30px);
-  }
-  55% {
-    clip: rect(67px, auto, 62px, 30px);
-  }
-  60% {
-    clip: rect(10px, auto, 105px, 30px);
-  }
-  65% {
-    clip: rect(78px, auto, 115px, 30px);
-  }
-  70% {
-    clip: rect(105px, auto, 13px, 30px);
-  }
-  75% {
-    clip: rect(15px, auto, 75px, 30px);
-  }
-  80% {
-    clip: rect(66px, auto, 39px, 30px);
-  }
-  85% {
-    clip: rect(133px, auto, 73px, 30px);
-  }
-  90% {
-    clip: rect(36px, auto, 128px, 30px);
-  }
-  95% {
-    clip: rect(68px, auto, 103px, 30px);
-  }
-  100% {
-    clip: rect(14px, auto, 100px, 30px);
-  }
-}
-@keyframes glitch-2 {
-  0% {
-    clip: rect(129px, auto, 36px, 30px);
-  }
-  5% {
-    clip: rect(36px, auto, 4px, 30px);
-  }
-  10% {
-    clip: rect(85px, auto, 66px, 30px);
-  }
-  15% {
-    clip: rect(91px, auto, 91px, 30px);
-  }
-  20% {
-    clip: rect(148px, auto, 138px, 30px);
-  }
-  25% {
-    clip: rect(38px, auto, 122px, 30px);
-  }
-  30% {
-    clip: rect(69px, auto, 54px, 30px);
-  }
-  35% {
-    clip: rect(98px, auto, 71px, 30px);
-  }
-  40% {
-    clip: rect(146px, auto, 34px, 30px);
-  }
-  45% {
-    clip: rect(134px, auto, 43px, 30px);
-  }
-  50% {
-    clip: rect(102px, auto, 80px, 30px);
-  }
-  55% {
-    clip: rect(119px, auto, 44px, 30px);
-  }
-  60% {
-    clip: rect(106px, auto, 99px, 30px);
-  }
-  65% {
-    clip: rect(141px, auto, 74px, 30px);
-  }
-  70% {
-    clip: rect(20px, auto, 78px, 30px);
-  }
-  75% {
-    clip: rect(133px, auto, 79px, 30px);
-  }
-  80% {
-    clip: rect(78px, auto, 52px, 30px);
-  }
-  85% {
-    clip: rect(35px, auto, 39px, 30px);
-  }
-  90% {
-    clip: rect(67px, auto, 70px, 30px);
-  }
-  95% {
-    clip: rect(71px, auto, 103px, 30px);
-  }
-  100% {
-    clip: rect(83px, auto, 40px, 30px);
-  }
-}
+# Message Assistant
+
+An AI-powered message response assistant for Facebook Messenger and iMessage on macOS. The application reads your conversations, learns your communication patterns, and provides intelligent reply suggestions that match your writing style.
+
+## Features
+
+- **Multi-Platform Message Reading**: Supports both Facebook Messenger (Web/Standalone) and iMessage
+- **AI-Powered Response Generation**: Uses advanced NLP to generate contextually appropriate replies
+- **Personal Writing Style Learning**: Analyzes your past messages to match your unique communication style
+- **Smart Context Awareness**: Understands conversation context and relationship dynamics
+- **Elevation System**: Automatically detects important messages that may need your personal attention
+- **Four Reply Options + Custom**: Provides 4 suggested replies plus custom message option
+- **Keyboard Shortcuts**: Quick reply selection with Cmd+1-4
+- **Privacy-Focused**: All data processing happens locally on your Mac
+
+## Requirements
+
+- macOS (required for message reading capabilities)
+- Node.js 16+ 
+- Accessibility permissions for reading messages
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/acesonder/gollilasoilver.git
+cd gollilasoilver
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the application:
+```bash
+npm start
+```
+
+## Usage
+
+### First Launch
+
+1. **Grant Accessibility Permissions**: The app will prompt you to grant accessibility permissions in System Preferences > Security & Privacy > Accessibility. This is required to read messages from Messenger and iMessage.
+
+2. **Select Message Source**: Choose between Facebook Messenger and iMessage using the tabs in the sidebar.
+
+3. **Select Conversation**: Click on any conversation to view messages and get reply suggestions.
+
+### Replying to Messages
+
+1. **View Suggestions**: The app automatically generates 4 contextually appropriate reply suggestions based on the conversation.
+
+2. **Select a Reply**: 
+   - Click any suggested reply button to send it
+   - Use keyboard shortcuts: Cmd+1, Cmd+2, Cmd+3, Cmd+4
+   - Write a custom message in the text area
+
+3. **Learn Your Style**: The app learns from your selections to improve future suggestions.
+
+### Features
+
+- **Auto-Suggest**: Enable in settings to automatically generate replies for new messages
+- **Style Learning**: The app continuously learns your communication patterns
+- **Elevation Alerts**: Important messages are flagged for your attention
+- **Conversation Context**: Replies are tailored to specific relationships and conversation history
+
+## Architecture
+
+### Core Components
+
+- **Message Reader** (`src/shared/messageReader.js`): Handles reading messages from macOS apps using AppleScript
+- **AI Response Generator** (`src/shared/aiResponseGenerator.js`): Generates intelligent replies using NLP and machine learning
+- **Database** (`src/shared/database.js`): Stores conversation history and learning patterns
+- **Main Process** (`src/main.js`): Electron main process handling app lifecycle and IPC
+- **Renderer** (`src/renderer/`): Frontend UI for the application
+
+### Technologies Used
+
+- **Electron**: Cross-platform desktop app framework
+- **Node NLP**: Natural language processing for intent recognition
+- **Compromise**: Text analysis and linguistic processing
+- **Sentiment**: Emotion analysis of messages
+- **SQLite**: Local database for storing patterns and preferences
+- **AppleScript**: macOS automation for reading messages
+
+## Development
+
+### Running in Development
+
+```bash
+npm run dev
+```
+
+### Running Tests
+
+```bash
+npm test
+```
+
+### Building for Distribution
+
+```bash
+npm run build
+```
+
+## Privacy & Security
+
+- **Local Processing**: All AI analysis happens locally on your Mac
+- **No Data Transmission**: Messages and patterns are never sent to external servers
+- **Secure Storage**: Local SQLite database with encrypted sensitive data
+- **Minimal Permissions**: Only requests necessary accessibility permissions
+
+## Customization
+
+### Response Styles
+
+The app supports different communication styles:
+- **Casual**: Relaxed, informal responses
+- **Professional**: Formal, business-appropriate responses  
+- **Friendly**: Warm, personable responses
+- **Auto-detect**: Automatically matches the conversation tone
+
+### Learning Settings
+
+- **Pattern Learning**: Enable/disable learning from your message choices
+- **Auto-suggestions**: Automatically suggest replies for new messages
+- **Context Memory**: How many previous messages to consider for context
+
+## Troubleshooting
+
+### Accessibility Issues
+
+If the app cannot read messages:
+
+1. Go to System Preferences > Security & Privacy > Accessibility
+2. Ensure "Message Assistant" is checked in the list
+3. If not listed, click the "+" button and add the app
+4. Restart the application
+
+### Message Reading Issues
+
+- **Messenger**: Ensure the Messenger app is running and logged in
+- **iMessage**: Ensure iMessage is set up and working normally
+- **Permissions**: Check that accessibility permissions are granted
+
+### Performance Issues
+
+- Clear old conversation data in settings if the app becomes slow
+- Restart the app if AI responses become unresponsive
+- Check available disk space for database storage
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Built with Electron for cross-platform compatibility
+- NLP powered by Node NLP and Compromise libraries
+- UI design inspired by modern messaging applications
+- macOS integration using AppleScript automation
