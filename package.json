@@ -1,0 +1,42 @@
+{
+  "name": "message-assistant",
+  "version": "1.0.0",
+  "description": "AI-powered message response assistant for Facebook Messenger and iMessage",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "test": "jest"
+  },
+  "keywords": ["electron", "messenger", "imessage", "ai", "assistant"],
+  "author": "Message Assistant",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "node-nlp": "^4.27.0",
+    "compromise": "^14.10.0",
+    "sentiment": "^5.0.2",
+    "sqlite3": "^5.1.6",
+    "axios": "^1.5.0"
+  },
+  "build": {
+    "appId": "com.messageassistant.app",
+    "productName": "Message Assistant",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "node_modules/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    }
+  }
+}

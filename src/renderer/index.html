@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>Message Assistant</h1>
+            <div class="status-indicators">
+                <div id="accessibility-status" class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Accessibility</span>
+                </div>
+                <div id="connection-status" class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Connection</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="conversation-list">
+                    <h3>Conversations</h3>
+                    <div class="source-tabs">
+                        <button class="tab-button active" data-source="messenger">Messenger</button>
+                        <button class="tab-button" data-source="imessage">iMessage</button>
+                    </div>
+                    <div id="conversations" class="conversations">
+                        <!-- Conversations will be populated here -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Chat Area -->
+            <section class="chat-area">
+                <div class="chat-header">
+                    <h2 id="chat-title">Select a conversation</h2>
+                    <button id="refresh-btn" class="refresh-button">Refresh</button>
+                </div>
+                
+                <div id="messages-container" class="messages-container">
+                    <div class="empty-state">
+                        <p>Select a conversation to see messages and get reply suggestions</p>
+                    </div>
+                </div>
+
+                <!-- Reply Suggestions -->
+                <div id="reply-section" class="reply-section" style="display: none;">
+                    <h3>Suggested Replies</h3>
+                    <div class="reply-options">
+                        <div class="suggested-replies">
+                            <button class="reply-button" data-index="0"></button>
+                            <button class="reply-button" data-index="1"></button>
+                            <button class="reply-button" data-index="2"></button>
+                            <button class="reply-button" data-index="3"></button>
+                        </div>
+                        <div class="custom-reply">
+                            <textarea id="custom-message" placeholder="Write a custom message..."></textarea>
+                            <button id="send-custom" class="send-button">Send Custom</button>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="generate-more" class="action-button">Generate More</button>
+                        <button id="learn-style" class="action-button">Learn My Style</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label>Response Style</label>
+                        <select id="response-style">
+                            <option value="casual">Casual</option>
+                            <option value="professional">Professional</option>
+                            <option value="friendly">Friendly</option>
+                            <option value="auto">Auto-detect</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="auto-suggest"> 
+                            Auto-suggest replies
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="learn-patterns"> 
+                            Learn from my messages
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Area -->
+        <div id="notifications" class="notifications"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
